@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  apache:
+    image: php:7.4-apache
+    depends_on:
+      - mysql
+    ports:
+      - 8080:80
+    volumes:
+      - .:/var/www/html
+    command: 'sh -c "docker-php-ext-install mysqli && exec apache2-foreground"'
+    links:
+      - mysql:db
+        
+  mysql:
+    image: 'mysql:latest'
+    restart: 'always'
+    volumes:
+      - ./init.sql:/init/init.sql
+    command: --init-file /init/init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
