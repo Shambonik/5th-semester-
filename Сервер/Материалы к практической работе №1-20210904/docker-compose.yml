@@ -18,6 +18,6 @@ services:
     restart: 'always'
     volumes:
       - ./init.sql:/init/init.sql
-    command: --init-file /init/init.sql
+    command: '"--init-file /init/init.sql" && "--default-authentification-plugn=mysql_native_password"'
     environment:
       MYSQL_ROOT_PASSWORD: password
