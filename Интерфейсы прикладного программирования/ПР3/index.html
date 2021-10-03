@@ -1,0 +1,43 @@
+<html>
+<meta charset="UTF-8">
+<head>
+    <title>Weather</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        var settings = {
+            "url": "https://api.openweathermap.org/data/2.5/weather?q=Moscow&units=metric&appid=793567b0d0964c0df6beaa8d4feeaea2", 
+            "method": "GET", 
+            "timeout": 0, 
+        };
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+            var content = response.main.temp;
+            $("#mainTemp").append(response.main.temp);
+            $("#minTemp").append(response.main.temp_min);
+            $("#maxTemp").append(response.main.temp_max);
+            $("#pressure").append(response.main.pressure)
+            for (var wind in response.wind) {
+                $("#wind").append('<br> <a>', wind, ' = ', response.wind[wind], ' ');
+            }
+        });
+    </script>
+</head>
+<body>
+<h1>Weather</h1>
+<div id="mainTemp">
+    Main temperature:
+</div>
+<div id="minTemp">
+    Min temperature:
+</div>
+<div id="maxTemp">
+    Max temperature:
+</div>
+<div id="pressure">
+    Pressure:
+</div>
+<div id="wind">
+    Wind information:
+</div>
+</body>
+</html>

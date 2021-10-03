@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.shambonik.meat"},{"l":"com.shambonik.meat.configuration"},{"l":"com.shambonik.meat.controllers"},{"l":"com.shambonik.meat.dto"},{"l":"com.shambonik.meat.models"},{"l":"com.shambonik.meat.repositories"},{"l":"com.shambonik.meat.services"}]

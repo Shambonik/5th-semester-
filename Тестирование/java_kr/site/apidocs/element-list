@@ -1,0 +1,7 @@
+com.shambonik.meat
+com.shambonik.meat.configuration
+com.shambonik.meat.controllers
+com.shambonik.meat.dto
+com.shambonik.meat.models
+com.shambonik.meat.repositories
+com.shambonik.meat.services
