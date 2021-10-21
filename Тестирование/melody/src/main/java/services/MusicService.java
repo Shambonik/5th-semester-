@@ -3,9 +3,10 @@ package services;
 import entities.Music;
 import entities.Player;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.io.*;
 import java.util.*;
 
 public class MusicService {
@@ -40,6 +41,26 @@ public class MusicService {
         }
     }
 
+    private void playMusic(File musicFile) {
+        try {
+            Clip clip = AudioSystem.getClip();
+            try {
+                AudioInputStream ais = AudioSystem.getAudioInputStream(musicFile);
+                clip.open(ais);
+                clip.setFramePosition(0);
+                clip.start();
+                Thread.sleep(clip.getMicrosecondLength() / 1000);
+                clip.stop();
+                clip.close();
+            } catch (InterruptedException e) {
+                clip.stop();
+                clip.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public Music getNextMusic() {
         if (!musicList.isEmpty()) {
             return musicList.remove(0);
@@ -48,8 +69,15 @@ public class MusicService {
     }
 
     public void turn(Player player, Music music) {
+        Runnable task = () -> {
+            playMusic(music.getFile());
+        };
+        Thread thread = new Thread(task);
+        thread.setDaemon(true);
+        thread.start();
         Scanner in = new Scanner(System.in);
         String answer = in.nextLine();
+        thread.interrupt();
         boolean isCorrect = false;
         for (String name : music.getNames()) {
             if (name.toLowerCase().replace(" ", "")
