@@ -48,14 +48,14 @@ public class MusicServiceTest {
         music_names.add("Название2");
         Music music = new Music(music_names, new File("files/music/сансара.wav"));
         MusicService musicService = new MusicService();
-        musicService.turn(player, music);
         System.setIn(new ByteArrayInputStream("Название1\n".getBytes()));
+        musicService.turn(player, music);
         assert player.getScore() == 100;
-        musicService.turn(player, music);
         System.setIn(new ByteArrayInputStream("Название2\n".getBytes()));
-        assert player.getScore() == 200;
         musicService.turn(player, music);
+        assert player.getScore() == 200;
         System.setIn(new ByteArrayInputStream("Название3\n".getBytes()));
+        musicService.turn(player, music);
         assert player.getScore() == 200;
     }
 }

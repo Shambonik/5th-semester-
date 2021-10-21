@@ -10,8 +10,8 @@ public class PlayerServiceTest {
     @Test
     public void addPlayerAndGetNext() {
         assert playerService.getNextPlayer() == null;
-        playerService.addPlayers();
         System.setIn(new ByteArrayInputStream("Игрок1\nИгрок2\nИгрок3\n".getBytes()));
+        playerService.addPlayers();
         assert playerService.getNextPlayer().getName().equals("Игрок1");
         assert playerService.getNextPlayer().getName().equals("Игрок2");
         assert playerService.getNextPlayer().getName().equals("Игрок3");
