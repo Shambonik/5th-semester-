@@ -37,8 +37,14 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Product'
-        default:
-          description: unexpected error
+        '404':
+          description: not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: internal server error
           content:
             application/json:
               schema:
@@ -60,8 +66,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Product'
-        default:
-          description: unexpected error
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: internal server error
           content:
             application/json:
               schema:
@@ -85,8 +97,14 @@ paths:
               application/json:
                 schema:
                   $ref: '#/components/schemas/Product'
-        default:
-          description: unexpected error
+        '404':
+          description: not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: internal server error
           content:
             application/json:
               schema:
@@ -105,8 +123,14 @@ paths:
       responses:
         '204':
           description: Product was deleted from repository
-        default:
-          description: unexpected error
+        '404':
+          description: not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: internal server error
           content:
             application/json:
               schema:
@@ -136,8 +160,26 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Product'
-        default:
-          description: unexpected error
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: internal server error
           content:
             application/json:
               schema:
@@ -165,6 +207,8 @@ components:
         count:
           type: integer
           format: int32
+          minimum: 100
+          maximum: 100
     Error:
       type: object
       required:
