@@ -13,10 +13,8 @@ import java.util.concurrent.Executors;
 
 public class Server {
     private static final StringBuilder inputMessage = new StringBuilder();
-    private static final StringBuilder inputMessageOld = new StringBuilder();
     private ServerSocket serverSocket;
     static final List<PrintWriter> printWriters = new ArrayList<>();
-
 
     public void start(int port) throws IOException {
         serverSocket = new ServerSocket(port);
@@ -33,13 +31,15 @@ public class Server {
             @Override
             public void run() {
                 if (inputMessage.length() > 0) {
-                    inputMessageOld.setLength(0);
-                    inputMessageOld.append(inputMessage);
-                    inputMessage.setLength(0);
                     for (PrintWriter out : printWriters) {
-                        System.out.println(inputMessageOld);
-                        out.println(inputMessageOld);
+                        try {
+                            System.out.println(inputMessage);
+                            out.println(inputMessage);
+                        } catch (Exception e) {
+                            printWriters.remove(out);
+                        }
                     }
+                    inputMessage.setLength(0);
                 }
             }
         }, 5000, 5000);
@@ -54,7 +54,6 @@ public class Server {
         private final Socket clientSocket;
         private PrintWriter out;
         private BufferedReader in;
-
 
         public MailingHandler(Socket socket) {
             this.clientSocket = socket;
@@ -78,20 +77,13 @@ public class Server {
                 try {
                     mes = in.readLine();
                 } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                if (".".equals(mes)) {
-                    out.println("bye");
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
                     break;
                 }
-                if (!"".equals(mes)) {
-                    inputMessage.append(mes).append(" ");
+                if ("end".equals(mes)) {
+                    out.println("connection closed");
+                    break;
                 }
+                inputMessage.append(mes).append(" ");
             }
             printWriters.remove(out);
             out.close();
@@ -101,11 +93,10 @@ public class Server {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
     }
 
     public static void main(String[] args) throws IOException {
-        new Server().start(8221);
+        new Server().start(8001);
     }
 }

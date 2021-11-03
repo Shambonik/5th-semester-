@@ -13,22 +13,25 @@ public class Client {
         in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
     }
 
-    public BufferedReader getIn(){
-        return in;
+    public void sendMessages() {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            String message = scanner.nextLine();
+            out.println(message);
+            if("end".equals(message)){
+                break;
+            }
+        }
     }
 
-    public void sendMessage(String msg) {
-        out.println(msg);
-    }
-
-    public static void getMessage(Client client) {
+    public void getMessages() {
         new Thread(() -> {
             while (true) {
                 try {
-                    String response = client.getIn().readLine();
+                    String response = in.readLine();
                     System.out.println(response);
-                    if("bye".equals(response)){
-                        client.stopConnection();
+                    if("connection closed".equals(response)){
+                        stopConnection();
                         break;
                     }
                 } catch (Exception e) {
@@ -46,20 +49,10 @@ public class Client {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         Client client = new Client();
-        client.startConnection("localhost", 8221);
-        getMessage(client);
-
-        Scanner sn = new Scanner(System.in);
-        while (true) {
-            String message = sn.nextLine();
-            client.sendMessage(message);
-            if(".".equals(message)){
-                break;
-            }
-        }
-
+        client.startConnection("localhost", 8001);
+        client.getMessages();
+        client.sendMessages();
     }
-
 }
 
 
