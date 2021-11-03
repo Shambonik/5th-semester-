@@ -77,7 +77,6 @@ public class Server {
                 String mes = "";
                 try {
                     mes = in.readLine();
-                    out.println("");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
