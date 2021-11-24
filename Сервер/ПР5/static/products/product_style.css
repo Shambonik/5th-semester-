@@ -1,0 +1,136 @@
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	align-items: top;
+	text-align: center;
+	gap: 0px 20px;
+	height: 120%;
+	background-color: white;
+}
+
+.header {
+	grid-area: 1 / 1 / 4 / 5;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.product_image {
+	grid-area: 2 / 1 / 6 / 3;
+	padding-left: 10vmax;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 100%;
+}
+
+.product_name {
+	grid-area: 2 / 3 / 3 / 5;
+	padding-right: 10vmax;
+	font-size: 2rem;
+	color: white;
+	text-shadow: 2px 2px 2px black; 
+	padding-top: 20%;
+}
+
+.product_description {
+	grid-area: 5 / 3 / 4 / 5;
+	padding-top: 10%;
+	padding-right: 10vmax;
+}
+
+.nutritional_value_ingredients{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	align-items: top;
+	gap: 0px 20px;
+	grid-template-areas:
+	"nutritional_value ingredients";
+}
+
+.nutritional_value{
+	grid-area: nutritional_value;
+}
+
+.nutritional_value li{
+	list-style-type: none;
+	border-bottom: thin dashed #320d00;
+	overflow: hidden;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.nutritional_value .name{
+	float: left;
+	text-align: left;
+	margin-right: 20px;
+}
+
+.nutritional_value .value{
+	float: right;
+	text-align: right;
+}
+
+.ingredients{
+	grid-area: ingredients;
+	text-align: left;
+}
+
+h3{
+	font-weight: normal;
+	text-align: center;
+}
+
+@media (max-width: 750px){
+	.grid-container {
+		grid-template-columns: 0.2fr 2fr 0.2fr;
+		grid-template-rows: 0.5fr 1fr 2fr 1fr 0.5fr;
+		align-items: top;
+		text-align: center;
+		gap: 0 0;
+		height: 120%;
+		background-color: white;
+	}
+
+	.header {
+		grid-area: 1 / 1 / 4 / 4;
+	}
+
+	.product_image {
+		grid-area:  3 / 2 / 5 / 3;
+		padding-left: 10vmax;
+	}
+
+	.product_name {
+		grid-area:  2 / 1 / 3 / 4;
+		padding-right: 0;
+		font-size: 2rem;
+		padding-top: 20%;
+		font-size: 1.2rem;
+		/*text-shadow: none;
+		color: black;
+		font-weight: bold;*/
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.product_description {
+		grid-area: 5/ 1 / 5 / 4;
+		padding: 0;
+		padding-top: 0px;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.nutritional_value_ingredients{
+		display: block;
+		align-items: top;
+	}
+
+	.nutritional_value ol{
+		padding: 0;
+	}
+}

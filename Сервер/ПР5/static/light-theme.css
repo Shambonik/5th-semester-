@@ -1,0 +1,12 @@
+body{
+	background-color: #e6e6fa;
+}
+
+.uploadButton{
+	background-color: #afb3ab; 
+	cursor: pointer;
+}
+
+a{
+	color: #2f6151;
+}

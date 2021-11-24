@@ -1,0 +1,54 @@
+version: '3'
+
+services:
+  proxy:
+    image: nginx:1.11
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./static:/data/static/
+
+  web:
+    image: php:7.4-apache
+    command: "/bin/sh -c 'apt-get update && 
+      pecl uninstall redis &&
+      pecl install -f redis &&
+      docker-php-ext-enable redis &&
+      docker-php-ext-install mysqli && 
+      exec apache2-foreground'"
+    volumes:
+      - ./dynamic:/var/www/html
+      - ./static/files:/var/www/files/
+    restart: always
+
+  db:
+    image: 'mysql:latest'
+    volumes: 
+      - ./init.sql:/data/application/init.sql
+    command: --init-file /data/application/init.sql
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD: root
+
+  redis:
+    image: redis
+    volumes:
+      - .redis/sessions/redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - "6379"
+
+  redis-files:
+    image: redis
+    volumes:
+      - .redis/files/redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - "6379"
+
+  delete_files:
+    image: ubuntu:latest
+    volumes: 
+      - ./static/files:/var/files/
+    command: "find /var/files/ -mmin +30 -delete"
+    restart: always
+

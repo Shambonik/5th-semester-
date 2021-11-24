@@ -1,0 +1,216 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<title>ChocoVo!</title>
+	<link rel="icon" href="images/favicon.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+</head>
+
+<body>
+	<script type="text/javascript" src="scripts/header.js"></script>
+	<script type="text/javascript" src="scripts/slider.js"></script>
+	<script type="text/javascript" src="scripts/scroll_animation.js"></script>
+	<script type="text/javascript" src="scripts/slider_buttons.js"></script>
+	<script type="text/javascript">
+		window.addEventListener("load", function(){
+			setTimeout(function () {
+				window.scrollTo({left: 0});
+			},50);
+			console.log("index");
+		});
+	</script>
+	<div class="nav_button" onclick="buttonOnClick(this)"></div>
+	<header id="header">
+		<div class="nav">
+			<a class="main" href="index.html"><img src="images/navbar/logo.png"></a>
+			<a class="products" href="products.html">Продукты</a>
+			<a class="feed" href="world.html">Мир ChocoVo!</a>
+			<a class="shops" href="shops.html">Магазины</a>
+		</div>
+	</header>
+
+	<div id="slider">
+		<input type="radio" name="slider_checkbox" class="slider_checkbox" id="slide_1" checked="checked">
+		<label for="slide_1"></label>
+		<div class="slide_background" style="background-image: url('images/slider_index/1.jpg');">
+			<div class="slide_text_background"></div>
+			<div class="slide">
+				<div class = "slide_text">
+					<h2 class="slide_title">Превосходный шоколад</h2>
+					<p class="slide_label">
+						Это совершенное шоколадное наслаждение от наших Мэтров Шоколатье, влюбленных в свое дело. С 1845 года мы создаем для Вас изысканные произведения шоколадного искусства, способные подарить моменты невероятного блаженства.
+					</p>
+					<div class="button"><a href="products.html">Откройте для себя шедевры ChocoVo!</a></div>
+				</div>
+			</div>
+		</div>
+		<input type="radio" name="slider_checkbox" class="slider_checkbox" id="slide_2">
+		<label for="slide_2"></label>
+		<div class="slide_background" style="background-image: url('images/slider_index/2.jpg');">
+			<div class="slide_text_background"></div>
+			<div class="slide">
+				<div class = "slide_text">
+					<h2 class="slide_title">Почему ChocoVo такой особенный?</h2>
+					<p class="slide_label">
+						Высокое качество ингредиентов, забота и мастерство, с которым мы создаем наш шоколад, и, главное, нежная, тающая во рту текстура с идеально гладкой поверхностью. Вот что делает наш шоколад единственным в своем роде!
+					</p>
+					<div class="button"><a href="world/features.html">Узнать больше</a></div>
+				</div>
+			</div>
+		</div>
+		<input type="radio" name="slider_checkbox" class="slider_checkbox" id="slide_3">
+		<label for="slide_3"></label>
+		<div class="slide_background" style="background-image: url('images/slider_index/3.jpg');">
+		
+			<div class="slide">
+				<div class = "slide_text">
+					<h2 class="slide_title">Впустите волшебство в свой дом</h2>
+					<p class="slide_label">
+						Новогодняя ёлка наряжена. Единственное, чего не хватает, чтобы привнести немного волшебства, - это наш Медвежонок TEDDY из молочного шоколада.  
+					</p>
+					<div class="button"><a href="products/teddy.html">В ожидании чуда</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content">
+		<h2 style="font-weight: normal;">Откройте для себя наш шоколад</h2>
+		<div class="slider_buttons">
+			<img src="images/slider_buttons/previous.png" class = "previous_button" onclick="previousSlide()">
+			<img src="images/slider_buttons/next.png" class = "next_button" onclick="nextSlide()">
+			<div class="slider_buttons_content active_slide">
+				<div class="text">
+					<h3>BLINDOR Молочный</h3>
+					<p>Конфеты BLINDOR - это великолепное сочетание невероятно нежного молочного шоколада и тающей кремовой начинки. Этот вкус подарит яркие и незабываемые моменты блаженства.</p>
+					<div class="button dark"><a href="products/blindor_milk.html">Показать</a></div>
+				</div>
+				<div class="image" style="background-image: url('images/slider_products/1.jpg');"><p></p></div>
+			</div>
+			<div class="slider_buttons_content">
+				<div class="text">
+					<h3>BLINDT Белый с ванилью</h3>
+					<p>Удивительно шелковистый и сливочный белый шоколад с вкраплениями настоящих ванильных бобов. Исключительная палитра вкусов от Мэтров Шоколатье ChocoVo!</p>
+					<div class="button dark"><a href="products/blindt_white.html">Показать</a></div>
+				</div>
+				<div class="image" style="background-image: url('images/slider_products/2.jpg');"><p></p></div>
+			</div>
+			<div class="slider_buttons_content">
+				<div class="text">
+					<h3>BLINDT Молочный с высоким содержанием какао 45%</h3>
+					<p>Изысканный шоколад с высоким содержанием молока и какао 45%.</p>
+					<div class="button dark"><a href="products/blindt_milk_45.html">Показать</a></div>
+				</div>
+				<div class="image" style="background-image: url('images/slider_products/3.jpg');"><p></p></div>
+			</div>
+			<div class="slider_buttons_content">
+				<div class="text">
+					<h3>BLINDOR Ассорти</h3>
+					<p>Ассорти конфет из шоколада с нежной, тающей начинкой. Это четыре невероятных вкуса конфет BLINDOR, которые подарят яркие и незабываемые моменты блаженства. Внутри набора : Молочный шоколад, Белый шоколад, Горький шоколад с 60% содержанием какао и Молочный шоколад с фундуком.</p>
+					<div class="button dark"><a href="products/blindor_assorted.html">Показать</a></div>
+				</div>
+				<div class="image" style="background-image: url('images/slider_products/4.jpg');"><p></p></div>
+			</div>
+		</div>
+		<div class="button dark"><a href="products.html">Посмотреть всё</a></div>
+	</div>
+
+	<div class="content_margins">
+		<div class = "image_text">
+			<img src="images/content_index/1.jpg" class="content_image anim_item">
+			<div class="text">
+				<h3 class="anim_item">Мир ChocoVo!</h3>
+				<p class="anim_item">
+					Всё началось в 1845 году в маленькой кондитерской в Москве, где Давид Шпрюнгли-Шварц и его сын Рудольф Шпрюнгли-Амман впервые создали цельный кусок шоколада. С тех пор вкус нашего шоколада постоянно совершенствовался, пока не стал таким, какой он есть сегодня: насыщенным и нежным. Ни с чем не сравнимый вкус!</p>
+				<div class="button dark anim_item"><a href="world.html">Узнать больше о ChocoVo!</a></div>
+			</div>
+		</div>
+		<div class = "text_image">
+			<img src="images/content_index/2.jpg" class="content_image anim_item">
+			<div class="text">
+				<h3 class="anim_item">Магазины ChocoVo!</h3>
+				<p class="anim_item">Нужен совет? Зайдите в один из многочисленных магазинов ChocoVo! за индивидуальной рекомендацией наших экспертов по шоколаду. Что может быть лучше личного знакомства?</p>
+				<div class="button dark anim_item"><a href="shops.html">Где нас найти?</a></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content link" style="
+	background: url('images/content_index/3.gif') no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	padding-top: 200px;
+	text-align: left;
+	">
+		<h2 class="anim_item">
+			Идеальное сочетание 
+		</h2>
+		<p class="anim_item">
+			Чтобы почувствовать всю глубину вкуса и раскрыть все, даже самые сложные оттенки, попробуйте наш темный шоколад с напитками, которые мы тщательно подобрали специально для Вас. Откройте для себя больше вкусовых сочетаний с ChocoVo!
+		</p>
+		<div class="button anim_item" style="background-color: black;"><a href="world/combinations.html">Исследовать новые вкусы</a></div>
+	</div>
+
+	<div class="content_margins">
+		<div class = "image_text" style="margin-bottom: 0;">
+			<img src="images/content_index/4.jpg" class="content_image anim_item">
+			<div class="text">
+				<h3 class="anim_item">Измените мир к лучшему вместе с нами: Карьера в ChocoVo!</h3>
+				<p class="anim_item">Наш успех зависит от наших людей. В ChocoVo! мы даем возможность нашим сотрудникам полностью раскрыть свой потенциал. Мы ищем людей с самым разным опытом. У них всех разное видение и взгляды, но их объединяют драйв и амбиции.
+				<div class="button dark anim_item"><a href="career.html">Узнать больше о карьере в ChocoVo!</a></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content" style="background: url('images/backgrounds/gold.png') no-repeat;">
+		<h2 style="color: white; font-weight: normal;">Следите за @ChocoVo в Instagram</h2>
+		<div class="instagram_photos">
+			<a class="image_link photo1" href="http://instagram.com">
+				<div style="background-image: url('images/instagram/1.jpg');"></div>
+			</a>
+			<a class="image_link photo2" href="http://instagram.com">
+				<div style="background-image: url('images/instagram/2.jpg');"></div>
+			</a>
+			<a class="image_link photo3" href="http://instagram.com">
+				<div style="background-image: url('images/instagram/3.jpg');"></div>
+			</a>
+			<a class="image_link photo4" href="http://instagram.com">
+				<div style="background-image: url('images/instagram/4.jpg');"></div>
+			</a>
+			<a class="image_link photo5" href="http://instagram.com">
+				<div style="background-image: url('images/instagram/5.jpg');"></div>
+			</a>
+			<a class="image_link photo6" href="http://instagram.com">
+				<div style="background-image: url('images/instagram/6.jpg');"></div>
+			</a>
+		</div>
+	</div>
+	
+	<footer style="width: 100%;">
+		<div class="contacts">
+			<div class="main_footer">Контакты</div>
+			<p>
+				Телефон: <a href="tel:+79221630503" style="color: #320d00;">+7 (922) 163-05-03</a>
+				<br>
+				E-mail: <a href="mailto:shambonik@gmail.com" style="color: #320d00;">shambonik@gmail.com</a>
+			</p>
+		</div>
+		<div class="links">
+			<div><a class="main_footer" href="index.html">Главная</a></div>
+			<div><a class="main_footer" href="career.html">Карьера</a></div>
+			<div><a class="main_footer" href="products.html">Продукты</a></div>
+			<div><a class="main_footer" href="shops.html">Магазины</a></div>
+		</div>
+		<div class="world">
+			<div><a class="main_footer" href="world.html">Мир ChocoVo!</a></div>
+			<div><a href="world/features.html">Почему наш шоколад такой особенный?</a></div>
+			<div><a href="world/combinations.html">Вкусовые сочетания</a></div>
+			<div><a href="world/kuzin_danil.html">Кузин Данил</a></div>
+		</div>
+		<p style="color: grey;">
+			© 2020 Shambonik
+		</p>
+	</footer>
+</body>
+</html>

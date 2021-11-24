@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS chocovoDB;
+CREATE USER IF NOT EXISTS 'user'@'%' IDENTIFIED BY 'password';
+GRANT SELECT,UPDATE,INSERT,DELETE ON chocovoDB.* TO 'user'@'%';
+FLUSH PRIVILEGES;
+
+USE chocovoDB;
+CREATE TABLE IF NOT EXISTS users (
+  ID INT(11) NOT NULL AUTO_INCREMENT,
+  name VARCHAR(20) NOT NULL,
+  password VARCHAR(40) NOT NULL,
+  PRIMARY KEY (ID)
+);
+
+INSERT INTO users (name, password)
+SELECT * FROM (SELECT 'admin', 'password') AS tmp
+WHERE NOT EXISTS (
+    SELECT name FROM users WHERE name = 'admin' AND password = 'password'
+) LIMIT 1;
+
+CREATE TABLE IF NOT EXISTS orders (
+  ID INT(11) NOT NULL AUTO_INCREMENT,
+  title VARCHAR(50) NOT NULL,
+  count INT(11) NOT NULL,
+  address VARCHAR(50) NOT NULL,
+  status VARCHAR(50) NOT NULL,
+  PRIMARY KEY (ID)
+);
