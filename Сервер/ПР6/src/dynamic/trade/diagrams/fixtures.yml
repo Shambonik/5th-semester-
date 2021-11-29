@@ -1,0 +1,7 @@
+Dump:
+    dump{0..59}:
+      milk_chocolate_profit: '<randomFloat(2, 100, 1000)>'
+      dark_chocolate_profit: '<randomFloat(2, 100, 1000)>'
+      milk_rating_from_users: '<numberBetween(1, 5)>'
+      dark_rating_from_users: '<numberBetween(1, 5)>'
+      count_in_order: '<numberBetween(1, 1000)>'

@@ -1,0 +1,145 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../style.css">
+	<title>Идеальные сочетания</title>
+	<link rel="icon" href="../images/favicon.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+</head>
+
+<body>
+	<script type="text/javascript" src="../scripts/header.js"></script>
+	<!-- <script type="text/javascript" src="scripts/slider.js"></script> -->
+	<script type="text/javascript" src="../scripts/scroll_animation.js"></script>
+	<script type="text/javascript" src="../scripts/slider_buttons.js"></script>
+	<script type="text/javascript">
+		window.addEventListener("load", function(){
+			setTimeout(function () {
+				window.scrollTo({left: 0});
+			},50);
+			console.log("index");
+		});
+	</script>
+	<div class="nav_button" onclick="buttonOnClick(this)"></div>
+	<header id="header">
+		<div class="nav">
+			<a class="main" href="../index.html"><img src="../images/navbar/logo.png"></a>
+			<a class="products" href="../products.html">Продукты</a>
+			<a class="feed" href="../world.html">Мир ChocoVo!</a>
+			<a class="shops" href="../shops.html">Магазины</a>
+		</div>
+	</header>
+
+	<div id="slider">
+		<input type="radio" name="slider_checkbox" class="slider_checkbox" id="slide_1" checked="checked">
+		<label for="slide_1" style="visibility: hidden;"></label>
+		<div class="slide_background" style="background-image: url('../images/combinations/slider.jpg');">
+			<div class="slide_text_background"></div>
+			<div class="slide">
+				<div class = "slide_text">
+					<h2 class="slide_title">Идеальные сочетания шоколада с напитками</h2>
+					<p class="slide_label">
+						Для любителей и ценителей шоколада. Для тех, у кого хорошо развиты вкусовые рецепторы и тех, кто ищет более богатые впечатления.<br><br>
+						Мы представляем наши варианты сочетания шоколада с различными напитками.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content" style="padding: 30px 15%;">
+		<h2 style="font-weight: normal;">Настроены ли Вы на ароматный кофе или успокаивающий чай?<br><br>
+		Мы разработали сочетания шоколада с напитками, призванные раскрыть лучшее в наших культовых плитках шоколада.</h2>
+	</div>
+
+	<div class="content_margins">
+		<div class = "image_text">
+			<img src="../images/combinations/coffee/1.jpg" class="content_image anim_item">
+			<div class="text">
+				<h3 class="anim_item">Кофе и шоколад</h3>
+				<p class="anim_item">Два прекрасных природных стимулятора: кофе и шоколад в сочетании создают непревзойденные вкус и аромат, которые пробудят Ваши чувства.<br><br>
+				У нас найдется плитка шоколада для самых разных видов кофе: от крепкого эспрессо до молочного латте.</p>
+				<div class="button dark anim_item"><a href="combinations/coffee.html">Исследовать вкусовые сочетания</a></div>
+			</div>
+		</div>
+		<div class = "text_image">
+			<img src="../images/combinations/tea/1.jpg" class="content_image anim_item">
+			<div class="text">
+				<h3 class="anim_item">Чай и шоколад</h3>
+				<p class="anim_item">В жизни не так много удовольствий, которые сильнее наслаждения, получаемого от чашечки чая и плитки шоколада.<br><br>
+					В следующий раз, когда будете заваривать свой любимый чай, подберите к нему шоколад и сделайте ощущение от перерыва на чай еще слаще.
+				</p>
+				<div class="button dark anim_item"><a href="combinations/tea.html">В поисках идеального сочетания</a></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content" style="background-color: transparent;">
+		<h2 style="font-weight: normal;">Откройте для себя наш шоколад</h2>
+		<div class="slider_buttons">
+			<img src="../images/slider_buttons/previous.png" class = "previous_button" onclick="previousSlide()">
+			<img src="../images/slider_buttons/next.png" class = "next_button" onclick="nextSlide()">
+			<div class="slider_buttons_content active_slide">
+				<div class="text">
+					<h3>BLINDOR Молочный</h3>
+					<p>Конфеты BLINDOR - это великолепное сочетание невероятно нежного молочного шоколада и тающей кремовой начинки. Этот вкус подарит яркие и незабываемые моменты блаженства.</p>
+					<div class="button dark"><a href="../products/blindor_milk.html">Показать</a></div>
+				</div>
+				<div class="image" style="background-image: url('../images/slider_products/1.jpg');"><p></p></div>
+			</div>
+			<div class="slider_buttons_content">
+				<div class="text">
+					<h3>BLINDT Белый с ванилью</h3>
+					<p>Удивительно шелковистый и сливочный белый шоколад с вкраплениями настоящих ванильных бобов. Исключительная палитра вкусов от Мэтров Шоколатье ChocoVo!</p>
+					<div class="button dark"><a href="../products/blindt_white.html">Показать</a></div>
+				</div>
+				<div class="image" style="background-image: url('../images/slider_products/2.jpg');"><p></p></div>
+			</div>
+			<div class="slider_buttons_content">
+				<div class="text">
+					<h3>BLINDT Молочный с высоким содержанием какао 45%</h3>
+					<p>Изысканный шоколад с высоким содержанием молока и какао 45%.</p>
+					<div class="button dark"><a href="../products/blindt_milk_45.html">Показать</a></div>
+				</div>
+				<div class="image" style="background-image: url('../images/slider_products/3.jpg');"><p></p></div>
+			</div>
+			<div class="slider_buttons_content">
+				<div class="text">
+					<h3>BLINDOR Ассорти</h3>
+					<p>Ассорти конфет из шоколада с нежной, тающей начинкой. Это четыре невероятных вкуса конфет BLINDOR, которые подарят яркие и незабываемые моменты блаженства. Внутри набора : Молочный шоколад, Белый шоколад, Горький шоколад с 60% содержанием какао и Молочный шоколад с фундуком.</p>
+					<div class="button dark"><a href="../products/blindor_assorted.html">Показать</a></div>
+				</div>
+				<div class="image" style="background-image: url('../images/slider_products/4.jpg');"><p></p></div>
+			</div>
+		</div>
+		<div class="button dark"><a href="../products.html">Посмотреть всё</a></div>
+	</div>
+
+	
+	<footer style="width: 100%;">
+		<div class="contacts">
+			<div class="main_footer">Контакты</div>
+			<p>
+				Телефон: <a href="tel:+79221630503" style="color: #320d00;">+7 (922) 163-05-03</a>
+				<br>
+				E-mail: <a href="mailto:shambonik@gmail.com" style="color: #320d00;">shambonik@gmail.com</a>
+			</p>
+		</div>
+		<div class="links">
+			<div><a class="main_footer" href="../index.html">Главная</a></div>
+			<div><a class="main_footer" href="../career.html">Карьера</a></div>
+			<div><a class="main_footer" href="../products.html">Продукты</a></div>
+			<div><a class="main_footer" href="../shops.html">Магазины</a></div>
+		</div>
+		<div class="world">
+			<div><a class="main_footer" href="../world.html">Мир ChocoVo!</a></div>
+			<div><a href="features.html">Почему наш шоколад такой особенный?</a></div>
+			<div><a href="combinations.html">Вкусовые сочетания</a></div>
+			<div><a href="kuzin_danil.html">Кузин Данил</a></div>
+		</div>
+		<p style="color: grey;">
+			© 2020 Shambonik
+		</p>
+	</footer>
+</body>
+</html>

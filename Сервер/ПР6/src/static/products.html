@@ -1,0 +1,207 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="products_style.css">
+	<title>Продукты</title>
+	<link rel="icon" href="images/favicon.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+</head>
+
+<body>
+	<script type="text/javascript" src="scripts/header.js"></script>
+	<!-- <script type="text/javascript" src="scripts/slider.js"></script> -->
+	<script type="text/javascript" src="scripts/scroll_animation.js"></script>
+	<!-- <script type="text/javascript" src="scripts/slider_buttons.js"></script> -->
+	<script type="text/javascript" src="scripts/product_filters.js"></script>
+	<script type="text/javascript">
+		window.addEventListener("load", function(){
+			setTimeout(function () {
+				window.scrollTo({left: 0});
+			},50);
+			console.log("index");
+		});
+	</script>
+	<div class="nav_button" onclick="buttonOnClick(this)"></div>
+	<header id="header">
+		<div class="nav">
+			<a  class="main" href="index.html"><img src="images/navbar/logo.png"></a>
+			<a class="products" href="products.html">Продукты</a>
+			<a class="feed" href="world.html">Мир ChocoVo!</a>
+			<a class="shops" href="shops.html">Магазины</a>
+		</div>
+	</header>
+
+	<div id="slider">
+		<input type="radio" name="slider_checkbox" class="slider_checkbox" id="slide_1" checked="checked">
+		<label for="slide_1" style="visibility: hidden;"></label>
+		<div class="slide_background" style="background-image: url('images/products/slider/1.jpg');">
+			<div class="slide_text_background"></div>
+			<div class="slide">
+				<div class = "slide_text">
+					<h2 class="slide_title">Идеальное сочетание</h2>
+					<p class="slide_label">
+Чтобы почувствовать всю глубину вкуса и раскрыть все, даже самые сложные оттенки,  попробуйте наш шоколад с напитками, которые мы тщательно подобрали специально для Вас. Откройте для себя больше вкусовых сочетаний с ChocoVo!
+					</p>
+					<div class="button"><a href="world/combinations.html">Исследовать новые вкусы</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content">
+		<h2 style="font-weight: normal;">Фильтры</h2>
+		<div class="filters">
+			<div><input type="checkbox" class="checkbox_type milk" onchange="checkedChange()"/>Молочный шоколад</div>
+			<div><input type="checkbox" class="checkbox_type dark" onchange="checkedChange()"/>Темный шоколад</div>
+			<div><input type="checkbox" class="checkbox_type white" onchange="checkedChange()"/>Белый шоколад</div>
+			<div><input type="checkbox" class="checkbox_type mix" onchange="checkedChange()"/>Ассорти</div>
+		</div>
+	</div>
+
+	<div class="content" style="border-top: thin solid #320d00;">
+		<ol class="products_list">
+			<li class="product_item milk">
+				<a class="image_link" href="products/blindor_milk.html">
+					<div style="background-image: url('images/products/list/blindor_milk.png');"></div>
+					<p>BLINDOR Молочный 200г</p>
+				</a>
+			</li>
+			<li class="product_item milk">
+				<a class="image_link" href="products/blindor_hazelnut.html">
+					<div style="background-image: url('images/products/list/blindor_hazelnut.png');"></div>
+					<p>BLINDOR Фундук 200г</p>
+				</a>
+			</li>
+			<li class="product_item milk">
+				<a class="image_link" href="products/blindor_coconut.html">
+					<div style="background-image: url('images/products/list/blindor_coconut.png');"></div>
+					<p>BLINDOR Кокос 200г</p>
+				</a>
+			</li>
+			<li class="product_item mix">
+				<a class="image_link" href="products/blindor_assorted.html">
+					<div style="background-image: url('images/products/list/blindor_assorted.png');"></div>
+					<p>BLINDOR Ассорти 200г</p>
+				</a>
+			</li>
+			<li class="product_item milk">
+				<a class="image_link" href="products/teddy.html">
+					<div style="background-image: url('images/products/list/teddy.png');"></div>
+					<p>Медвежонок TEDDY 200г</p>
+				</a>
+			</li>
+			<li class="product_item milk">
+				<a class="image_link" href="products/blindt_milk_45.html">
+					<div style="background-image: url('images/products/list/blindt_milk_45.png');"></div>
+					<p>BLINDT Молочный с высоким содержанием какао 45% 80г</p>
+				</a>
+			</li>
+			<li class="product_item dark">
+				<a class="image_link" href="products/blindt_dark_70.html">
+					<div style="background-image: url('images/products/list/blindt_dark_70.png');"></div>
+					<p>BLINDT Горький 70% Какао 100г</p>
+				</a>
+			</li>
+			<li class="product_item dark">
+				<a class="image_link" href="products/blindt_dark_78.html">
+					<div style="background-image: url('images/products/list/blindt_dark_78.png');"></div>
+					<p>BLINDT Горький 78% Какао 100г</p>
+				</a>
+			</li>
+			<li class="product_item dark">
+				<a class="image_link" href="products/blindt_dark_85.html">
+					<div style="background-image: url('images/products/list/blindt_dark_85.png');"></div>
+					<p>BLINDT Горький 85% Какао 100г</p>
+				</a>
+			</li>
+			<li class="product_item dark">
+				<a class="image_link" href="products/blindt_dark_90.html">
+					<div style="background-image: url('images/products/list/blindt_dark_90.png');"></div>
+					<p>BLINDT Горький 90% Какао 100г</p>
+				</a>
+			</li>
+			<li class="product_item dark">
+				<a class="image_link" href="products/blindt_orange.html">
+					<div style="background-image: url('images/products/list/blindt_orange.png');"></div>
+					<p>BLINDT Темный с Апельсином 100г</p>
+				</a>
+			</li>
+			<li class="product_item dark">
+				<a class="image_link" href="products/blindt_sea_salt.html">
+					<div style="background-image: url('images/products/list/blindt_sea_salt.png');"></div>
+					<p>BLINDT Темный с Морской Солью 100г</p>
+				</a>
+			</li>
+			<li class="product_item dark">
+				<a class="image_link" href="products/
+			blindt_caramel_sea_salt.html">
+					<div style="background-image: url('images/products/list/blindt_caramel_sea_salt.png');"></div>
+					<p>BLINDT Темный Карамель с Морской Солью 100г</p>
+				</a>
+			</li>
+			<li class="product_item dark">
+				<a class="image_link" href="products/
+			blindt_mint.html">
+					<div style="background-image: url('images/products/list/blindt_mint.png');"></div>
+					<p>BLINDT Темный с Мятой 100г</p>
+				</a>
+			</li>
+			<li class="product_item dark">
+				<a class="image_link" href="products/
+			blindt_chili.html">
+					<div style="background-image: url('images/products/list/blindt_chili.png');"></div>
+					<p>BLINDT Темный с Мятой 100г</p>
+				</a>
+			</li>
+			
+			<li class="product_item white">
+				<a class="image_link" href="products/blindt_white.html">
+					<div style="background-image: url('images/products/list/blindt_white.png');"></div>
+					<p>BLINDT Белый с ванилью 100г</p>
+				</a>
+			</li>
+			<li class="product_item milk">
+				<a class="image_link" href="products/blindt_milk_no_sugar.html">
+					<div style="background-image: url('images/products/list/blindt_milk_no_sugar.png');"></div>
+					<p>BLINDT Молочный без сахара 100г</p>
+				</a>
+			</li>
+			<li class="product_item dark">
+				<a class="image_link" href="products/blindt_dark_no_sugar.html">
+					<div style="background-image: url('images/products/list/blindt_dark_no_sugar.png');"></div>
+					<p>BLINDT Темный без сахара 100г</p>
+				</a>
+			</li>
+		</ol>
+	</div>
+
+	
+
+	<footer style="width: 100%;">
+		<div class="contacts">
+			<div class="main_footer">Контакты</div>
+			<p>
+				Телефон: <a href="tel:+79221630503" style="color: #320d00;">+7 (922) 163-05-03</a>
+				<br>
+				E-mail: <a href="mailto:shambonik@gmail.com" style="color: #320d00;">shambonik@gmail.com</a>
+			</p>
+		</div>
+		<div class="links">
+			<div><a class="main_footer" href="index.html">Главная</a></div>
+			<div><a class="main_footer" href="career.html">Карьера</a></div>
+			<div><a class="main_footer" href="products.html">Продукты</a></div>
+			<div><a class="main_footer" href="shops.html">Магазины</a></div>
+		</div>
+		<div class="world">
+			<div><a class="main_footer" href="world.html">Мир ChocoVo!</a></div>
+			<div><a href="world/features.html">Почему наш шоколад такой особенный?</a></div>
+			<div><a href="world/combinations.html">Вкусовые сочетания</a></div>
+			<div><a href="world/kuzin_danil.html">Кузин Данил</a></div>
+		</div>
+		<p style="color: grey;">
+			© 2020 Shambonik
+		</p>
+	</footer>
+</body>
+</html>
